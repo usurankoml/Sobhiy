@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobhi - موقع شخصي متطور</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#3b82f6',secondary:'#10b981'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; } /* Default Remixicon content, can be overridden if specific icons are missing */
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+        .hero-section {
+            background-image: url('https://readdy.ai/api/search-image?query=modern%2520professional%2520website%2520hero%2520section%2520with%2520gradient%2520blue%2520background%2520and%2520abstract%2520shapes%2520on%2520the%2520right%2520side%2520leaving%2520clean%2520space%2520on%2520the%2520left%2520for%2520text%2520content%2520minimalist%2520design%2520high%2520quality%2520professional%2520looking&width=1600&height=800&seq=hero1&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+        .custom-checkbox {
+            position: relative;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 2px solid #e2e8f0; /* slate-200 */
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .custom-checkbox.checked {
+            background-color: #3b82f6; /* primary */
+            border-color: #3b82f6; /* primary */
+        }
+        .custom-checkbox.checked::after {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 2px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .custom-switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+        }
+        .custom-switch-input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .custom-switch-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #e2e8f0; /* slate-200 */
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .custom-switch-slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        .custom-switch-input:checked + .custom-switch-slider {
+            background-color: #3b82f6; /* primary */
+        }
+        .custom-switch-input:checked + .custom-switch-slider:before {
+            transform: translateX(20px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white shadow-sm fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="#" class="text-3xl font-['Pacifico'] text-primary">Sobhi</a>
+                <nav class="hidden md:flex mr-10">
+                    <ul class="flex space-x-8 space-x-reverse">
+                        <li><a href="#" class="text-gray-900 font-medium hover:text-primary transition-colors">الرئيسية</a></li>
+                        <li><a href="#services" class="text-gray-700 hover:text-primary transition-colors">خدماتنا</a></li>
+                        <li><a href="#projects" class="text-gray-700 hover:text-primary transition-colors">المشاريع</a></li>
+                        <li><a href="#blog" class="text-gray-700 hover:text-primary transition-colors">المدونة</a></li>
+                        <li><a href="#contact" class="text-gray-700 hover:text-primary transition-colors">تواصل معنا</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4 space-x-reverse">
+                <button class="text-gray-700 hover:text-primary transition-colors border border-gray-300 rounded-button px-4 py-2 text-sm whitespace-nowrap">
+                    <span>English</span>
+                    <i class="ri-global-line mr-1"></i>
+                </button>
+                <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700" aria-label="Open menu">
+                    <i class="ri-menu-line text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="mobile-menu">
+        <div class="bg-white h-full w-3/4 max-w-xs p-5 transform transition-transform">
+            <div class="flex justify-between items-center mb-8">
+                <a href="#" class="text-3xl font-['Pacifico'] text-primary">Sobhi</a>
+                <button id="close-menu" class="w-10 h-10 flex items-center justify-center text-gray-700" aria-label="Close menu">
+                    <i class="ri-close-line text-2xl"></i>
+                </button>
+            </div>
+            <nav>
+                <ul class="space-y-4">
+                    <li><a href="#" class="block py-2 text-gray-900 font-medium hover:text-primary transition-colors">الرئيسية</a></li>
+                    <li><a href="#services" class="block py-2 text-gray-700 hover:text-primary transition-colors">خدماتنا</a></li>
+                    <li><a href="#projects" class="block py-2 text-gray-700 hover:text-primary transition-colors">المشاريع</a></li>
+                    <li><a href="#blog" class="block py-2 text-gray-700 hover:text-primary transition-colors">المدونة</a></li>
+                    <li><a href="#contact" class="block py-2 text-gray-700 hover:text-primary transition-colors">تواصل معنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <main class="pt-16">
+        <section class="hero-section min-h-[600px] flex items-center">
+            <div class="container mx-auto px-4 w-full">
+                <div class="max-w-2xl">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">أهلاً بك في عالم <span class="text-primary">الإبداع الرقمي</span></h1>
+                    <p class="text-lg text-gray-700 mb-8">نقدم حلولاً متكاملة لتطوير مواقع الويب وتطبيقات الهاتف المحمول وخدمات التسويق الرقمي بأعلى معايير الجودة والاحترافية</p>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#contact" class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-blue-600 transition-colors shadow-md whitespace-nowrap">تواصل معنا</a>
+                        <a href="#services" class="bg-white text-primary px-8 py-3 rounded-button font-medium border border-primary hover:bg-gray-50 transition-colors whitespace-nowrap">استكشف خدماتنا</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">خدماتنا المتميزة</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">نقدم مجموعة متكاملة من الخدمات الرقمية لمساعدتك على تحقيق أهدافك وتطوير أعمالك</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 rounded-lg p-8 transition-transform hover:-translate-y-2 hover:shadow-lg">
+                        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                            <i class="ri-code-line text-primary text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">تطوير المواقع الإلكترونية</h3>
+                        <p class="text-gray-600 mb-4">تصميم وتطوير مواقع ويب احترافية متجاوبة مع جميع الأجهزة وبأحدث التقنيات</p>
+                        <a href="#" class="text-primary font-medium hover:text-blue-700 transition-colors inline-flex items-center">
+                            <span>اكتشف المزيد</span>
+                            <i class="ri-arrow-left-line mr-1"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-8 transition-transform hover:-translate-y-2 hover:shadow-lg">
+                        <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                            <i class="ri-smartphone-line text-secondary text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">تطوير تطبيقات الجوال</h3>
+                        <p class="text-gray-600 mb-4">تصميم وبرمجة تطبيقات الهواتف الذكية لنظامي iOS و Android بأحدث التقنيات</p>
+                        <a href="#" class="text-primary font-medium hover:text-blue-700 transition-colors inline-flex items-center">
+                            <span>اكتشف المزيد</span>
+                            <i class="ri-arrow-left-line mr-1"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-8 transition-transform hover:-translate-y-2 hover:shadow-lg">
+                        <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                            <i class="ri-line-chart-line text-purple-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">التسويق الرقمي</h3>
+                        <p class="text-gray-600 mb-4">استراتيجيات تسويقية متكاملة لزيادة الوصول وتحسين معدلات التحويل وتنمية الأعمال</p>
+                        <a href="#" class="text-primary font-medium hover:text-blue-700 transition-colors inline-flex items-center">
+                            <span>اكتشف المزيد</span>
+                            <i class="ri-arrow-left-line mr-1"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-8 transition-transform hover:-translate-y-2 hover:shadow-lg">
+                        <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
+                            <i class="ri-palette-line text-orange-500 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">تصميم الهوية البصرية</h3>
+                        <p class="text-gray-600 mb-4">تصميم هويات بصرية متكاملة للشركات والمؤسسات تعكس قيمها وتميزها في السوق</p>
+                        <a href="#" class="text-primary font-medium hover:text-blue-700 transition-colors inline-flex items-center">
+                            <span>اكتشف المزيد</span>
+                            <i class="ri-arrow-left-line mr-1"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-8 transition-transform hover:-translate-y-2 hover:shadow-lg">
+                        <div class="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+                            <i class="ri-search-line text-red-500 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">تحسين محركات البحث</h3>
+                        <p class="text-gray-600 mb-4">خدمات تحسين الظهور في نتائج محركات البحث وزيادة الزيارات العضوية لموقعك</p>
+                        <a href="#" class="text-primary font-medium hover:text-blue-700 transition-colors inline-flex items-center">
+                            <span>اكتشف المزيد</span>
+                            <i class="ri-arrow-left-line mr-1"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-8 transition-transform hover:-translate-y-2 hover:shadow-lg">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-lg flex items-center justify-center mb-6">
+                            <i class="ri-customer-service-2-line text-yellow-500 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">الدعم الفني المستمر</h3>
+                        <p class="text-gray-600 mb-4">خدمات دعم فني متواصلة لضمان استمرارية عمل موقعك أو تطبيقك بكفاءة عالية</p>
+                        <a href="#" class="text-primary font-medium hover:text-blue-700 transition-colors inline-flex items-center">
+                            <span>اكتشف المزيد</span>
+                            <i class="ri-arrow-left-line mr-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">أحدث مشاريعنا</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">نفخر بتقديم مجموعة من المشاريع المتميزة التي نفذناها لعملائنا في مختلف المجالات</p>
+                </div>
+                
+                <div class="flex flex-wrap justify-center mb-10 gap-2">
+                    <button class="bg-primary text-white px-6 py-2 rounded-full text-sm font-medium whitespace-nowrap">الكل</button>
+                    <button class="bg-white text-gray-700 px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors whitespace-nowrap">تطوير الويب</button>
+                    <button class="bg-white text-gray-700 px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors whitespace-nowrap">تطبيقات الجوال</button>
+                    <button class="bg-white text-gray-700 px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors whitespace-nowrap">الهوية البصرية</button>
+                    <button class="bg-white text-gray-700 px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors whitespace-nowrap">التسويق الرقمي</button>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md group">
+                        <div class="relative overflow-hidden h-60">
+                            <img src="https://readdy.ai/api/search-image?query=modern%2520e-commerce%2520website%2520with%2520clean%2520design%2520professional%2520looking%2520showing%2520products%2520with%2520white%2520background%2520minimalist%2520design%2520high%2520quality%2520professional%2520looking&width=600&height=400&seq=proj1&orientation=landscape" alt="مشروع متجر إلكتروني" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/333333?text=Project+Image+1';">
+                            <div class="absolute inset-0 bg-primary bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <a href="#" class="bg-white text-primary w-12 h-12 rounded-full flex items-center justify-center" aria-label="View project">
+                                    <i class="ri-eye-line text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-medium text-primary bg-blue-50 px-3 py-1 rounded-full">تطوير الويب</span>
+                            <h3 class="text-xl font-bold text-gray-900 mt-3 mb-2">منصة تسوق إلكتروني</h3>
+                            <p class="text-gray-600 text-sm">تطوير منصة تسوق إلكتروني متكاملة مع نظام دفع وإدارة مخزون وتطبيق جوال</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md group">
+                        <div class="relative overflow-hidden h-60">
+                            <img src="https://readdy.ai/api/search-image?query=modern%2520mobile%2520app%2520interface%2520design%2520for%2520food%2520delivery%2520service%2520showing%2520multiple%2520screens%2520on%2520smartphone%2520mockups%2520professional%2520looking%2520clean%2520design&width=600&height=400&seq=proj2&orientation=landscape" alt="تطبيق توصيل طعام" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/333333?text=Project+Image+2';">
+                            <div class="absolute inset-0 bg-primary bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <a href="#" class="bg-white text-primary w-12 h-12 rounded-full flex items-center justify-center" aria-label="View project">
+                                    <i class="ri-eye-line text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-medium text-secondary bg-green-50 px-3 py-1 rounded-full">تطبيقات الجوال</span>
+                            <h3 class="text-xl font-bold text-gray-900 mt-3 mb-2">تطبيق توصيل طعام</h3>
+                            <p class="text-gray-600 text-sm">تطوير تطبيق متكامل لتوصيل الطعام مع لوحة تحكم للمطاعم ونظام تتبع للطلبات</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md group">
+                        <div class="relative overflow-hidden h-60">
+                            <img src="https://readdy.ai/api/search-image?query=modern%2520brand%2520identity%2520design%2520for%2520luxury%2520brand%2520showing%2520logo%2520business%2520cards%2520and%2520stationery%2520mockups%2520elegant%2520professional%2520looking%2520minimalist%2520design&width=600&height=400&seq=proj3&orientation=landscape" alt="هوية بصرية لشركة" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/333333?text=Project+Image+3';">
+                            <div class="absolute inset-0 bg-primary bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <a href="#" c
